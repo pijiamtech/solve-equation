@@ -1,52 +1,59 @@
-# Quadratic equation
-# The quadratic equation is: ax^2 + bx + c = 0
-def solve_quadratic(a, b, c):
+def solve_and_print_quadratic(example):
+    a = example["a"]
+    b = example["b"]
+    c = example["c"]
+    
     x1 = (-b + ((b**2 - 4*a*c)**0.5)) / (2*a)
     x2 = (-b - ((b**2 - 4*a*c)**0.5)) / (2*a)
-    return x1, x2
+    
     print(f"The quadratic equation is: {a}x^2 + {b}x + {c} = 0")
-    solutions = solve_quadratic(a, b, c)
-    print(f"The solutions are: x1 = {solutions[0]}, x2 = {solutions[1]}")
+    print(f"The solutions are: x1 = {x1}, x2 = {x2}")
 
-# a = int(input("Enter the coefficient a: "))
-# b = int(input("Enter the coefficient b: "))
-# c = int(input("Enter the coefficient c: "))
-# print(f"The quadratic equation is: {a}x^2 + {b}x + {c} = 0")
-# solutions = solve_quadratic(a, b, c)
-# print(f"The solutions are: x1 = {solutions[0]}, x2 = {solutions[1]}")
-
-
-# Systems equations
-# The linear equation is: ax + by = c
-# def solve_systems(a1, b1, c1, a2, b2, c2):
-#     D = a1 * b2 - a2 * b1
-#     if D == 0:
-#         raise ValueError("The system of equations has no unique solution.")
+def solve_and_print_systems(example):
+    a1 = example["a1"]
+    b1 = example["b1"]
+    c1 = example["c1"]
+    a2 = example["a2"]
+    b2 = example["b2"]
+    c2 = example["c2"]
     
-#     Dx = c1 * b2 - c2 * b1
-#     Dy = a1 * c2 - a2 * c1
+    D = a1 * b2 - a2 * b1
+    Dx = c1 * b2 - c2 * b1
+    Dy = a1 * c2 - a2 * c1
     
-#     x = Dx / D
-#     y = Dy / D
-#     return x, y
+    if D == 0:
+        if Dx == 0 and Dy == 0:
+            print("The system has infinitely many solutions.")
+        else:
+            print("The system has no solution.")
+    else:
+        x = Dx / D
+        y = Dy / D
+        print(f"The system of equations is: {a1}x + {b1}y = {c1} and {a2}x + {b2}y = {c2}")
+        print(f"The solutions are: x = {x}, y = {y}")
 
-# a1 = int(input("Enter the coefficient a1: "))
-# b1 = int(input("Enter the coefficient b1: "))
-# c1 = int(input("Enter the coefficient c1: "))
-# a2 = int(input("Enter the coefficient a2: "))
-# b2 = int(input("Enter the coefficient b2: "))
-# c2 = int(input("Enter the coefficient c2: "))
-    
-# print(f"The linear equation is: {a1}x + {b1}y = {c1}")
-# print(f"The linear equation is: {a2}x + {b2}y = {c2}")   
-# solutions = solve_systems(a1, b1, c1, a2, b2, c2)
-# print(f"The solutions are: x = {solutions[0]}, y = {solutions[1]}")
+# รับค่าจากผู้ใช้สำหรับ example0
+example0 = {}
+example0["a"] = float(input("Enter the coefficient a: "))
+example0["b"] = float(input("Enter the coefficient b: "))
+example0["c"] = float(input("Enter the coefficient c: "))
+example0["a1"] = float(input("Enter the coefficient a1: "))
+example0["b1"] = float(input("Enter the coefficient b1: "))
+example0["c1"] = float(input("Enter the coefficient c1: "))
+example0["a2"] = float(input("Enter the coefficient a2: "))
+example0["b2"] = float(input("Enter the coefficient b2: "))
+example0["c2"] = float(input("Enter the coefficient c2: "))
 
+example1 = {"a": 1, "b": -5, "c": 6}
+example2 = {"a": 2, "b": 4, "c": -6}
+example3 = {"a": 1, "b": 3, "c": -10}
+example4 = {"a1": 1, "b1": 1, "c1": 5, "a2": 2, "b2": -1, "c2": 1}
+example5 = {"a1": 3, "b1": 2, "c1": 12, "a2": 4, "b2": -1, "c2": 5}
+example6 = {"a1": 6, "b1": -3, "c1": 9, "a2": 2, "b2": 1, "c2": 5}
 
-# example
+# เลือกตัวอย่างที่ต้องการ
+selected_example = example0  # คุณสามารถเปลี่ยนเป็น example1, example2, example3
 
-example1 = {
-    "a": 1, "b": -5, "c": 6
-}
-
-print(solve_quadratic(example1{"a"},example1{"b"},example1{"c"}))
+# เรียกใช้ฟังก์ชัน
+solve_and_print_quadratic(selected_example)
+solve_and_print_systems(selected_example)
