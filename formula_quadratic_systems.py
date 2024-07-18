@@ -57,8 +57,10 @@ example5 = {"a1": 3, "b1": 2, "c1": 12, "a2": 4, "b2": -1, "c2": 5}
 example6 = {"a1": 6, "b1": -3, "c1": 9, "a2": 2, "b2": 1, "c2": 5}
 
 
-selected_example = get_quadratic_example()
-solve_quadratic(selected_example)
+# selected_example = get_quadratic_example()
+# solve_quadratic(selected_example)
+solve_quadratic(example1)
 
-selected_example = get_system_example()
-solve_systems(selected_example)
+# selected_example = get_system_example()
+# solve_systems(selected_example)
+solve_systems(example4)

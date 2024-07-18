@@ -1,3 +1,13 @@
+def func():
+    print("Function is activated")
+
+def add(a,b):
+    c = a + b
+    print("a = ",a)
+    print("b = ",b)
+    print("c = ",c)
+    return c
+
 # 1, 2, 3 quadratic
 example1 = {"a": 1, "b": -5, "c": 6}
 example2 = {"a": 2, "b": 4, "c": -6}
